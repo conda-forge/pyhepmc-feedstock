@@ -10,7 +10,7 @@ source:
   sha256: 17a6f941e4fa06d08a628990f6816d1da5e545d65f533e6f598740d2cb76ace4
 
 build:
-  skip: true  # [py<38 or osx]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
@@ -28,7 +28,8 @@ requirements:
     - pip
   run:
     - python
-    - numpy
+    - numpy >=1.21
+    - packaging
 
 test:
   imports:
