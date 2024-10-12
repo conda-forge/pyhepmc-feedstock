@@ -1,5 +1,5 @@
 {% set name = "pyhepmc" %}
-{% set version = "2.13.4" %}
+{% set version = "2.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyhepmc-{{ version }}.tar.gz
-  sha256: 5570b451eff4d11962b4f6155f5157eda5427c9db0f8193c644043ce3fc6af73
+  sha256: 17a6f941e4fa06d08a628990f6816d1da5e545d65f533e6f598740d2cb76ace4
 
 build:
-  skip: true  # [py<38 or osx]
+  skip: true  # [py<39 or osx]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -28,7 +28,8 @@ requirements:
     - pip
   run:
     - python
-    - numpy
+    - numpy >=1.21
+    - packaging
 
 test:
   imports:
