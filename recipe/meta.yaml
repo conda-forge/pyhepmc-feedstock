@@ -12,7 +12,7 @@ source:
 build:
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -44,11 +44,13 @@ test:
 
 about:
   summary: Pythonic interface to the HepMC3 C++ library licensed under LGPL-v3.
-  home: https://scikit-hep.org/pyhepmc/
+  home: https://github.com/scikit-hep/pyhepmc
   license: BSD-3-Clause AND LGPL-3.0-only
   license_file:
     - LICENSE
     - extern/HepMC3/COPYING
+  dev_url: https://github.com/scikit-hep/pyhepmc
+  doc_url: https://scikit-hep.org/pyhepmc/
 
 extra:
   recipe-maintainers:
