@@ -10,12 +10,15 @@ source:
   sha256: 17a6f941e4fa06d08a628990f6816d1da5e545d65f533e6f598740d2cb76ace4
 
 build:
-  skip: true  # [py<39 or osx]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - cmake >=3.13  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - make
