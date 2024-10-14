@@ -3,11 +3,15 @@ About pyhepmc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyhepmc-feedstock/blob/main/LICENSE.txt)
 
-Home: https://scikit-hep.org/pyhepmc/
+Home: https://github.com/scikit-hep/pyhepmc
 
 Package license: BSD-3-Clause AND LGPL-3.0-only
 
 Summary: Pythonic interface to the HepMC3 C++ library licensed under LGPL-v3.
+
+Development: https://github.com/scikit-hep/pyhepmc
+
+Documentation: https://scikit-hep.org/pyhepmc/
 
 Current build status
 ====================
