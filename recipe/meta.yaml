@@ -1,5 +1,5 @@
 {% set name = "pyhepmc" %}
-{% set version = "2.14.0" %}
+{% set version = "2.16.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyhepmc-{{ version }}.tar.gz
-  sha256: 17a6f941e4fa06d08a628990f6816d1da5e545d65f533e6f598740d2cb76ace4
+  sha256: 7586baa7b1bcbd56636766e2bebf7457da9ec2f4f19bd683950915939b435d60
 
 build:
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 4
+  number: 0
 
 requirements:
   build:
@@ -33,6 +33,7 @@ requirements:
     - python
     - numpy >=1.21
     - packaging
+    - backports.zstd  # [py<314]
 
 test:
   imports:
@@ -48,7 +49,7 @@ about:
   license: BSD-3-Clause AND LGPL-3.0-only
   license_file:
     - LICENSE
-    - extern/HepMC3/COPYING
+    - LICENSES_bundled
   dev_url: https://github.com/scikit-hep/pyhepmc
   doc_url: https://scikit-hep.org/pyhepmc/
 
