@@ -33,6 +33,7 @@ requirements:
     - python
     - numpy >=1.21
     - packaging
+    - backports.zstd  # [py<314]
 
 test:
   imports:
